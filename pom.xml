@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gavinmogan</groupId>
+    <groupId>com.pallasathenagroup</groupId>
     <artifactId>codacy-maven-plugin</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.2.0</version>
     <packaging>maven-plugin</packaging>
 
     <name>codacy-maven-plugin Maven Plugin</name>
@@ -27,9 +27,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/halkeye/codacy-maven-plugin</url>
-        <connection>scm:git:https://github.com/halkeye/codacy-maven-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:halkeye/codacy-maven-plugin.git</developerConnection>
+        <url>https://github.com/JWGmeligMeyling/codacy-maven-plugin</url>
+        <connection>scm:git:https://github.com/JWGmeligMeyling/codacy-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:JWGmeligMeyling/codacy-maven-plugin.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     <issueManagement>
@@ -50,17 +50,18 @@
         </developer>
     </developers>
 
+
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <name>Nexus Release Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <name>Nexus Release Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>pallasathenagroup</id>
+            <name>pallasathenagroup-releases-local</name>
+            <url>https://pallasathenagroup.jfrog.io/pallasathenagroup/plugins-release-local</url>
         </repository>
+        <snapshotRepository>
+            <id>pallasathenagroup</id>
+            <name>pallasathenagroup-snapshots-local</name>
+            <url>https://pallasathenagroup.jfrog.io/pallasathenagroup/plugins-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <repositories>
@@ -159,17 +160,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
